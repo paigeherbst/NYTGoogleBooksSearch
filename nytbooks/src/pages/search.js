@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
 import "./pages.css";
 import API from "../utils/API";
 import Container from "../components/Layout/container";
 import Wrapper from "../components/Layout/wrapper";
-import Paper from "@material-ui/core/Paper";
+// import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import BookCard from "../components/Card";
 import SearchForm from "../components/Search/SearchForm";
@@ -25,13 +25,11 @@ class Search extends Component {
     };
     this.handleSaveBook = this.handleSaveBook.bind(BookCard);
   }
-  // When the component mounts, get a list of all available books
-    
-  // handle search input term
+  
   handleSearchInput = event => {
     this.setState({ search: event.target.value });
   };
-  // on form sumbit -> search for books
+  
   handleFormSubmit = event => {
     event.preventDefault();
     API.searchBooks(this.state.search)
@@ -61,7 +59,7 @@ class Search extends Component {
     
     console.log(this.title, this.authors, this.description, this.synopsis, this.image);
   }
-  // // Save book
+
   handleSaveBook = event => {
     event.preventDefault();
     console.log("click");
