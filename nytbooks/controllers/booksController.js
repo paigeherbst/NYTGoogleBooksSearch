@@ -1,6 +1,4 @@
 const db = require("../models");
-
-// Defining methods to make query calls ----------------------------
 module.exports = {
   findAll: function(req, res) {
     db.Book
@@ -27,12 +25,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  // delete: function(req, res) {
-  //   db.Book
-  //     .findOneAndDelete({ _id: req.params.id })
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
+  
   remove: function(req, res) {
     db.Book
       .findById({ _id: req.params.id })
